@@ -14,20 +14,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #01010c;
+  background: #191c29;
 }
 
-/* Set logo uny to right top */
+/* Set logo uny to left top */
 .logo-uny {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 100px;
   height: 100px;
-  margin: 20px;
-  margin-right: 40px;
+  margin: 10px;
+  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .logo-uny {
