@@ -2,9 +2,11 @@
   --card-height: 300px;
   --card-width: calc(var(--card-height) / 1.5);
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   width: 100vw;
   height: 100vh;
@@ -15,8 +17,8 @@ body {
   background: #01010c;
 }
 
-/*set logo uny to right top*/
-.logo-uny{
+/* Set logo uny to right top */
+.logo-uny {
   position: absolute;
   top: 0;
   right: 0;
@@ -25,13 +27,33 @@ body {
   margin: 20px;
   margin-right: 40px;
 }
-h1{
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .logo-uny {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-uny {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    margin-right: 10px;
+  }
+}
+
+h1 {
   color: #626b79;
   text-align: center;
   position: absolute;
-  font: 4em 'Press Start 2P', cursive;
+  font: 3em 'Press Start 2P', cursive;
   font-weight: bold;
-  top: 0;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -77,6 +99,7 @@ h1{
   position: absolute;
   left: 0;
 }
+
 .wrapper::before {
   top: 0;
   height: 100%;
@@ -87,6 +110,7 @@ h1{
     rgba(12, 13, 19) 97%
   );
 }
+
 .wrapper::after {
   bottom: 0;
   opacity: 1;
@@ -106,12 +130,14 @@ h1{
 .card:hover .wrapper::after {
   height: 120px;
 }
+
 .title {
   width: 100%;
   transition: transform 0.5s;
   position: absolute;
   top: 65%;
 }
+
 .card:hover .title {
   transform: translate3d(0%, -50px, 100px);
 }
@@ -156,4 +182,53 @@ footer {
   font-family: "Press Start 2P", cursive;
   font-size: 1.25em;
   font-weight: bold;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  .card {
+    width: 80%;
+    height: auto;
+    margin: 0;
+  }
+
+  .wrapper::before,
+  .wrapper::after {
+    height: 40px;
+  }
+
+  .description {
+    top: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .description {
+    top: 150px;
+  }
+}
+
+@media only screen and (max-width: 1324px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  h1 {
+    font-size: 1.5em;
+  }
 }
