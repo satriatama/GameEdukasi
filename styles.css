@@ -191,6 +191,9 @@ h1 {
   padding: 10px 0; /* Added padding /
   background: #0c0d13; / Added background color */
   }
+  .card.pressed{
+    margin: 100px;
+  }
 
   .card.pressed .wrapper {
     transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
@@ -220,7 +223,3 @@ h1 {
   .card.pressed .description {
     opacity: 1;
   }
-  .card.pressed{
-    margin: 100px;
-  }
-  
