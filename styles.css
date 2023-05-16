@@ -174,7 +174,7 @@ h1 {
   font-size: 1.0em;
   font-weight: bold;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
   }
   
   .card:hover .description {
@@ -219,5 +219,8 @@ h1 {
   
   .card.pressed .description {
     opacity: 1;
+  }
+  .card.pressed{
+    margin: 50px;
   }
   
