@@ -16,7 +16,7 @@
     </div>
     <div class="all-card">
       <a href="Game3.html" alt="Game 1" target="_blank">
-        <div class="card">
+        <div class="card" ontouchstart="startPress(this)" ontouchend="endPress(this)">
           <div class="wrapper">
             <img src="CoverGame1.png" class="cover-image" />
           </div>
@@ -29,7 +29,7 @@
       </a>
 
       <a href="Game2.html" alt="Game 2" target="_blank">
-        <div class="card">
+        <div class="card" ontouchstart="startPress(this)" ontouchend="endPress(this)">
           <div class="wrapper">
             <img src="CoverGame2.png" class="cover-image" />
           </div>
@@ -42,7 +42,7 @@
       </a>
 
       <a href="Game1.html" alt="Game 3" target="_blank">
-        <div class="card">
+        <div class="card" ontouchstart="startPress(this)" ontouchend="endPress(this)">
           <div class="wrapper">
             <img src="CoverGame3.png" class="cover-image" />
           </div>
@@ -58,5 +58,19 @@
       <p>© 2023 - metrahultikultura</p>
     </footer>
   </div>
+  <script>
+    var pressTimer;
+
+    function startPress(element) {
+      pressTimer = setTimeout(function() {
+        element.classList.add('pressed');
+      }, 1000);
+    }
+
+    function endPress(element) {
+      clearTimeout(pressTimer);
+      element.classList.remove('pressed');
+    }
+  </script>
 </body>
 </html>

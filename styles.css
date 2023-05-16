@@ -32,8 +32,8 @@ body {
 
 /* Set logo UNY to top left */
 .logo-uny {
-  width: 8%;
-  margin: 10px;
+  width: 6%;
+  margin: 1%;
   margin-right: 20px;
   position: absolute;
   top: 0;
@@ -167,13 +167,14 @@ h1 {
   opacity: 0;
   transition: all 0.3s;
   position: absolute;
-  top: calc(var(--card-height) + 30px); /* Adjust the top value as needed */
+  top: calc(100% + 10px); /* Adjust the top value as needed */
   padding: 0 20px 20px;
   color: #626b79;
   font-family: "Roboto", sans-serif;
   font-size: 1.0em;
   font-weight: bold;
   text-align: center;
+  z-index: 1;
   }
   
   .card:hover .description {
@@ -190,3 +191,33 @@ h1 {
   padding: 10px 0; /* Added padding /
   background: #0c0d13; / Added background color */
   }
+
+  .card.pressed .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .card.pressed .wrapper::before,
+  .card.pressed .wrapper::after {
+    opacity: 1;
+  }
+  
+  .card.pressed .wrapper::after {
+    height: 120px;
+  }
+  
+  .card.pressed .title {
+    transform: translate3d(0%, -50px, 100px);
+  }
+  
+  .card.pressed .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+  }
+  
+  .card.pressed .description {
+    opacity: 1;
+  }
+  
