@@ -12,50 +12,47 @@ body {
   height: 100vh;
   margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Added */
+  justify-content: space-between; /* Added */
   align-items: center;
   background: #191c29;
 }
 
-/* Set logo uny to left top */
+.all-content {
+  width: 100%;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Set logo UNY to top left */
 .logo-uny {
-  width: 100px;
-  height: 100px;
+  width: 8%;
   margin: 10px;
   margin-right: 20px;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .logo-uny {
-    width: 80px;
-    height: 80px;
-    margin: 10px;
-    margin-right: 20px;
-  }
-}
 
-@media (max-width: 480px) {
-  .logo-uny {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
-    margin-right: 10px;
-  }
-}
-
+/* make h1 title responsive */
 h1 {
-  color: #626b79;
+  width: 100%;
   text-align: center;
-  position: absolute;
-  font: 3em 'Press Start 2P', cursive;
+  color: #626b79;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5em;
   font-weight: bold;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin: 0;
+  margin-top: 1%;
+  padding: 0;
 }
+
 .card {
   width: var(--card-width);
   height: var(--card-height);
@@ -65,7 +62,18 @@ h1 {
   align-items: flex-end;
   padding: 0 36px;
   perspective: 2500px;
-  margin: 0 50px;
+  margin: 0 10px; /* Adjust the margin value as needed */
+}
+
+.all-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px; /* Added margin bottom */
 }
 
 .cover-image {
@@ -114,121 +122,71 @@ h1 {
   bottom: 0;
   opacity: 1;
   background-image: linear-gradient(
-    to bottom,
-    transparent 46%,
-    rgba(12, 13, 19, 0.5) 68%,
-    rgba(12, 13, 19) 97%
+  to bottom,
+  transparent 46%,
+  rgba(12, 13, 19, 0.5) 68%,
+  rgba(12, 13, 19) 97%
   );
-}
-
-.card:hover .wrapper::before,
-.wrapper::after {
+  }
+  
+  .card:hover .wrapper::before,
+  .wrapper::after {
   opacity: 1;
-}
-
-.card:hover .wrapper::after {
+  }
+  
+  .card:hover .wrapper::after {
   height: 120px;
-}
-
-.title {
+  }
+  
+  .title {
   width: 100%;
   transition: transform 0.5s;
   position: absolute;
   top: 65%;
-}
-
-.card:hover .title {
+  }
+  
+  .card:hover .title {
   transform: translate3d(0%, -50px, 100px);
-}
-
-.character {
+  }
+  
+  .character {
   width: 100%;
   opacity: 0;
   transition: all 0.5s;
   position: absolute;
   z-index: -1;
-}
-
-.card:hover .character {
+  }
+  
+  .card:hover .character {
   opacity: 1;
   transform: translate3d(0%, -30%, 100px);
-}
-
-.description {
+  }
+  
+  .description {
   width: 100%;
   opacity: 0;
   transition: all 0.3s;
   position: absolute;
-  top: 300px;
+  top: calc(var(--card-height) + 30px); /* Adjust the top value as needed */
   padding: 0 20px 20px;
   color: #626b79;
   font-family: "Press Start 2P", cursive;
   font-size: 1.0em;
   font-weight: bold;
   text-align: center;
-}
-
-.card:hover .description {
+  }
+  
+  .card:hover .description {
   opacity: 1;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
+  }
+  
+  footer {
   width: 100%;
   text-align: center;
   color: #626b79;
   font-family: "Press Start 2P", cursive;
   font-size: 1.25em;
   font-weight: bold;
-}
-
-/* Responsive Styles */
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3em;
+  padding: 10px 0; /* Added padding /
+  background: #0c0d13; / Added background color */
   }
-
-  .card {
-    width: 80%;
-    height: auto;
-    margin: 0 5px;
-  }
-
-  .wrapper::before,
-  .wrapper::after {
-    height: 100%;
-  }
-
-  .description {
-    top: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2.5em;
-  }
-
-  .card {
-    width: 90%;
-    margin: 0;
-  }
-
-  .description {
-    top: 100%;
-  }
-}
-
-@media only screen and (max-width: 1324px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-
-@media only screen and (max-width: 770px) {
-  h1 {
-    font-size: 1.5em;
-  }
-}
